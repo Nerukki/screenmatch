@@ -1,4 +1,5 @@
-import br.com.alura.screenmatch.modelos.Movie;
+import br.alura.com.screenmatch.calculos.CalculadoraDeTempo;
+import br.com.alura.screenmatch.modelos.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -6,6 +7,7 @@ public class Main {
         movie1.setTitle("O poderoso chefão");
         movie1.setReleaseDate(1970);
         movie1.setTimeInMinutes(180);
+        System.out.println("duração do filme: " + movie1.getTimeInMinutes());
 
 
         movie1.showDatasheet();
@@ -21,5 +23,29 @@ public class Main {
         //System.out.println(movie1.totalRating);
         //System.out.println(movie1.amountOfRating);
 
+
+        Series lost = new Series();
+        lost.setTitle("Lost");
+        lost.setReleaseDate(2000);
+        lost.showDatasheet();
+        lost.setSeasons(10);
+        lost.setSeasonsEpisodes(10);
+        lost.setEpisodeMinutes(50);
+        System.out.println("duração da série: " + lost.getTimeInMinutes());
+
+
+
+        Movie movie2 = new Movie();
+        movie2.setTitle("Avatar");
+        movie2.setReleaseDate(2023);
+        movie2.setTimeInMinutes(200);
+
+
+
+        CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
+        calculadora.inclui(movie1);
+        calculadora.inclui(movie2);
+        calculadora.inclui(lost);
+        System.out.println(calculadora.getTempoTotal());
     }
 }
