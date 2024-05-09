@@ -1,5 +1,8 @@
 import br.alura.com.screenmatch.calculos.CalculadoraDeTempo;
+import br.alura.com.screenmatch.calculos.FiltroDeRecomendacao;
 import br.com.alura.screenmatch.modelos.*;
+
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
@@ -47,5 +50,31 @@ public class Main {
         calculadora.inclui(movie2);
         calculadora.inclui(lost);
         System.out.println(calculadora.getTempoTotal());
+
+        FiltroDeRecomendacao filtro = new FiltroDeRecomendacao();
+        filtro.filtra(movie1);
+
+        Episodio episodio1DeLost  = new Episodio();
+        episodio1DeLost.setNumero(1);
+        episodio1DeLost.setSerie(lost);
+        episodio1DeLost.setTotalVisualizacoes(300);
+        filtro.filtra(episodio1DeLost);
+
+
+        Movie movie3 = new Movie();
+        movie3.setTitle("Dogville");
+        movie3.setReleaseDate(2003);
+        movie3.setTimeInMinutes(200);
+
+
+        ArrayList<Movie> listaDeFilmes = new ArrayList<>();
+        listaDeFilmes.add(movie1);
+        listaDeFilmes.add(movie2);
+        listaDeFilmes.add(movie3);
+        System.out.println("tamanho da lista: " + listaDeFilmes.size());
+        System.out.println("primeiro filme: " + listaDeFilmes.get(0));
+        System.out.println(listaDeFilmes);
+
+
     }
 }
