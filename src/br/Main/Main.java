@@ -6,9 +6,9 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        Movie movie1 = new Movie();
-        movie1.setTitle("O poderoso chefão");
-        movie1.setReleaseDate(1970);
+        Movie movie1 = new Movie("O poderoso chefão", 1970);
+        //movie1.setTitle("O poderoso chefão");
+        //movie1.setReleaseDate(1970);
         movie1.setTimeInMinutes(180);
         System.out.println("duração do filme: " + movie1.getTimeInMinutes());
 
@@ -27,9 +27,9 @@ public class Main {
         //System.out.println(movie1.amountOfRating);
 
 
-        Series lost = new Series();
-        lost.setTitle("Lost");
-        lost.setReleaseDate(2000);
+        Series lost = new Series("lost", 2000);
+//        lost.setTitle("Lost");
+//        lost.setReleaseDate(2000);
         lost.showDatasheet();
         lost.setSeasons(10);
         lost.setSeasonsEpisodes(10);
@@ -38,9 +38,9 @@ public class Main {
 
 
 
-        Movie movie2 = new Movie();
-        movie2.setTitle("Avatar");
-        movie2.setReleaseDate(2023);
+        Movie movie2 = new Movie("Avatar", 2023);
+        //movie2.setTitle("Avatar");
+        //movie2.setReleaseDate(2023);
         movie2.setTimeInMinutes(200);
 
 
@@ -61,9 +61,8 @@ public class Main {
         filtro.filtra(episodio1DeLost);
 
 
-        Movie movie3 = new Movie();
-        movie3.setTitle("Dogville");
-        movie3.setReleaseDate(2003);
+        Movie movie3 = new Movie("Dogville", 2003);
+        //movie3.setReleaseDate(2003);
         movie3.setTimeInMinutes(200);
 
 
@@ -75,6 +74,8 @@ public class Main {
         System.out.println("primeiro filme: " + listaDeFilmes.get(0));
         System.out.println(listaDeFilmes);
         System.out.println("toString do filme: " + listaDeFilmes.get(0).toString());
+
+
 
     }
 }
